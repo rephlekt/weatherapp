@@ -38,14 +38,14 @@ app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help Page',
         name: "Greg",
-        helpText: "The help page"
+        helpText: "If you are receiving weather data from the wrong location, try using a more specific search!"
     })
 })
 
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({
-            error: "You must provide an address"
+            error: "You must provide an address!"
         })
     }
 
@@ -74,7 +74,7 @@ app.get("/help/*", (req, res) => {
     res.render('error', {
         title: "404",
         name: "Greg",
-        errorMsg: "Help article not found"
+        errorMsg: "Help article not found!"
     })
 })
 
@@ -82,7 +82,7 @@ app.get("*", (req, res) => {
     res.render('error', {
         title: "404",
         name: "Greg",
-        errorMsg: "Page not found"
+        errorMsg: "Page not found!"
     })
 })
 
